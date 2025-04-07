@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdf6f0;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: #fffdfc;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    font-size: 28px;
+    color: #ff8fab;
+  }
+  
+  header p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .input-section {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-section input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ffafcc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .input-section button {
+    background-color: #ff8fab;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .input-section button:hover {
+    background-color: #ff6f91;
+  }
+  
+  .tasks h2,
+  .progress h2 {
+    margin: 20px 0 10px;
+    color: #ffafcc;
+  }
+  
+  #taskList {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #taskList li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #taskList input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 10px;
+    accent-color: #ff8fab;
+  }
+  
+  .progress .bar {
+    width: 100%;
+    height: 20px;
+    background: #f0e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  
+  .progress .fill {
+    height: 100%;
+    background: #ff8fab;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #progressText {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  footer {
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+  }
+  

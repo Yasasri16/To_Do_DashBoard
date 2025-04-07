@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Goals Dashboard</title>
+  <link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hello Yasasri! </h1>
+      <p>Here’s your plan for today </p>
+    </header>
+
+    <section class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button onclick="addTask()">Add Task</button>
+    </section>
+
+    <section class="tasks">
+      <h2>✅ Today's Tasks</h2>
+      <ul id="taskList"></ul>
+    </section>
+
+    <section class="progress">
+      <h2>📊 Progress</h2>
+      <div class="bar">
+        <div class="fill" id="progressFill"></div>
+      </div>
+      <p id="progressText">0% completed</p>
+    </section>
+
+    <footer>
+      <blockquote>"Discipline is the bridge between goals and accomplishment." – Jim Rohn</blockquote>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

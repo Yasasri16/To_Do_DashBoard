@@ -1,4 +1,4 @@
-<script>
+
   let tasks = [];
 
   window.onload = function () {
@@ -77,4 +77,3 @@
   function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
-</script>

@@ -1,14 +1,14 @@
 <script>
   let tasks = [];
 
-  // Load tasks from localStorage when page loads
   window.onload = function () {
-    const stored = localStorage.getItem('tasks');
-    if (stored) {
-      tasks = JSON.parse(stored);
+    // Load saved tasks from localStorage
+    const saved = localStorage.getItem('tasks');
+    if (saved) {
+      tasks = JSON.parse(saved);
       tasks.forEach(task => renderTask(task.text, task.completed));
-      updateProgress();
     }
+    updateProgress();
   };
 
   function addTask() {
@@ -17,23 +17,24 @@
 
     if (taskText === '') return;
 
-    const task = { text: taskText, completed: false };
-    tasks.push(task);
+    const newTask = { text: taskText, completed: false };
+    tasks.push(newTask);
     saveTasks();
     renderTask(taskText, false);
     taskInput.value = '';
     updateProgress();
   }
 
-  function renderTask(text, isCompleted) {
-    const listItem = document.createElement('li');
+  function renderTask(text, completed) {
+    const taskList = document.getElementById('taskList');
+    const li = document.createElement('li');
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.checked = isCompleted;
+    checkbox.checked = completed;
 
     checkbox.addEventListener('change', function () {
-      const index = Array.from(document.getElementById('taskList').children).indexOf(listItem);
+      const index = Array.from(taskList.children).indexOf(li);
       tasks[index].completed = this.checked;
       saveTasks();
       updateProgress();
@@ -51,18 +52,17 @@
     deleteBtn.style.cursor = 'pointer';
 
     deleteBtn.addEventListener('click', function () {
-      const index = Array.from(document.getElementById('taskList').children).indexOf(listItem);
+      const index = Array.from(taskList.children).indexOf(li);
       tasks.splice(index, 1);
       saveTasks();
-      listItem.remove();
+      li.remove();
       updateProgress();
     });
 
-    listItem.appendChild(checkbox);
-    listItem.appendChild(label);
-    listItem.appendChild(deleteBtn);
-
-    document.getElementById('taskList').appendChild(listItem);
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
   }
 
   function updateProgress() {
